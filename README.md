@@ -51,8 +51,7 @@ There are some high-level playbooks I created from a customer demonstration for 
 
 These playbooks and configuration examples can be found at:
 ```
-https://github.com/netwrkr95/macsec_eapol_demo - automatic!
-[GitHub](https://github.com/netwrkr95/macsec_eapol_demo)
+[Reference Link to configuration examples - MACsec EAPoL Demo's](https://github.com/netwrkr95/macsec_eapol_demo)
 ```
 
 ### References
@@ -60,7 +59,5 @@ https://github.com/netwrkr95/macsec_eapol_demo - automatic!
 [1] Cisco IOS-XE EAPoL Documentation: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/macsec/configuration/xe-3s/macsec-xe-3s-book.html#task_1573E9C7150F4451981F493D0B7859CB
 
 [2] WAN MACsec Overview - White Paper:  https://www.cisco.com/c/dam/en/us/td/docs/solutions/Enterprise/Security/MACsec/WP-High-Speed-WAN-Encrypt-MACsec.pdf 
-
-
 
 

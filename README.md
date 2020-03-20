@@ -50,9 +50,8 @@ This demonstration is leveraging the following version of code:
 There are some high-level playbooks I created from a customer demonstration for applying these commands to an IOS-XE router running MACsec, in addition to detailed examples for MKS key rotation within IOS-XE.
 
 These playbooks and configuration examples can be found at:
-```
+
 [Reference Link to configuration examples - MACsec EAPoL Demo's](https://github.com/netwrkr95/macsec_eapol_demo)
-```
 
 ### References
 

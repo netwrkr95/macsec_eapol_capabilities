@@ -4,7 +4,7 @@ The purpose of this document is to provide several key enhancements Cisco IOS-XE
 
 ### What is WAN MACsec?
 
-To gather a more in-depth understanding of WAN MACsec, how it benefits network designs, and key areas operators should be understanding, see key reference material below [2] that will aid in understanding the vital concept for securing high speed data networks.
+To gather a more in-depth understanding of WAN MACsec, how it benefits network designs, and key areas operators should be understanding, see key reference material below [2] that will aid in understanding the framework for securing high speed data networks using WAN MACsec.
 
 ### Common Challenges
 
@@ -29,7 +29,7 @@ interface TenGigabitEthernet0/0/0
 ```
 The first of these commands, the "**eapol destination-address broadcast-address**" command, allows the EAPoL destination MAC address to be modified, using a standard (all "F's") broadcast address.  This allows the Layer-2 transport network to treat the EAPoL traffic as a standard broadcast type packet, and more importantly, transparently flooding it to all receivers un-processed by the transit backbone bridges. 
 
-The second command, "**eapol eth-type 876F**", modifies the ether-type of the EAPoL frame to an ether-type that is "unknown" (Cisco owns this ether-type value) encoding, changing the behavior of how the public Ethernet transport transit bridge processes the frame.  In essence, it allows the transit bridge(s) to ignore this ether-type and for the frame to be sent to the MACsec destination MACsec end-point, un-processed.  The output from a Wifreshark capture can be found a the following link in the "docs" section of the repo ([EAPoL Wireshark capture output](https://github.com/netwrkr95/macsec_eapol_capabilities/blob/master/docs/EAPoL_Capture.txt)).
+The second command, "**eapol eth-type 876F**", modifies the ether-type of the EAPoL frame to an ether-type that is "unknown" (Cisco owns this ether-type value) encoding, changing the behavior of how the public Ethernet transport transit bridge processes the frame.  In essence, it allows the transit bridge(s) to ignore this ether-type and for the frame to be sent to the MACsec destination MACsec end-point, un-processed.  The output from a WireShark capture of both the MAC-address and Ether-type after the modification, can be found a the following link in the "docs" section of the repo ([EAPoL WireShark capture output](https://github.com/netwrkr95/macsec_eapol_capabilities/blob/master/docs/EAPoL_Capture.txt)).
 
 The final command in the example, "**macsec**", simply enables MACsec on the shown interface.
 ```

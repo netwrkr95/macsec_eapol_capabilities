@@ -1,0 +1,14 @@
+!
+interface TenGigabitEthernet0/0/0
+ mtu 9100
+ ip address 10.15.0.1 255.255.255.0
+ ip mtu 9068
+ mpls ip
+ eapol destination-address broadcast-address
+ eapol eth-type 876F
+ mka policy POLICY_1
+ mka pre-shared-key key-chain KEY_1
+ macsec
+ bfd interval 2000 min_rx 2000 multiplier 3
+ cdp enable
+!

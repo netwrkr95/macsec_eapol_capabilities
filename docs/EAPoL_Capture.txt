@@ -1,0 +1,33 @@
+Frame 6: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface 0
+    Interface id: 0 (/tmp/epc_ws/wif_to_ts_pipe)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Aug 27, 2019 21:08:54.603114000 UTC
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1566940134.603114000 seconds
+    [Time delta from previous captured frame: 1.556783000 seconds]
+    [Time delta from previous displayed frame: 1.556783000 seconds]
+    [Time since reference or first frame: 9.557633000 seconds]
+    Frame Number: 6
+    Frame Length: 74 bytes (592 bits)
+    Capture Length: 74 bytes (592 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:data]
+Ethernet II, Src: 80:e0:1d:27:21:00 (80:e0:1d:27:21:00), Dst: ff:ff:ff:ff:ff:ff (ff:ff:ff:ff:ff:ff)
+    Destination: ff:ff:ff:ff:ff:ff (ff:ff:ff:ff:ff:ff)
+        Address: ff:ff:ff:ff:ff:ff (ff:ff:ff:ff:ff:ff)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...1 .... .... .... .... = IG bit: Group address (multicast/broadcast)
+    Source: 80:e0:1d:27:21:00 (80:e0:1d:27:21:00)
+        Address: 80:e0:1d:27:21:00 (80:e0:1d:27:21:00)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: Unknown (0x876f)
+Data (60 bytes)
+
+0000  03 05 00 38 01 00 f0 1d 80 e0 1d 27 21 00 00 08   ...8.......'!...
+0010  cc bf 6e e5 55 38 c8 20 8b 3d 10 9d 00 00 00 01   ..n.U8. .=......
+0020  00 80 c2 01 03 00 00 00 ff 00 00 10 3d 73 bc ed   ............=s..
+0030  14 5c c7 99 b0 eb fc 63 e5 bd 12 f9               .\.....c....
+    Data: 030500380100f01d80e01d2721000008ccbf6ee55538c820...
+    [Length: 60]

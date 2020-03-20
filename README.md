@@ -8,12 +8,12 @@ To gather a more in-depth understanding of WAN MACsec, how it benefits network d
 
 ### Common Challenges
 
-Prior to these enhancements, establishing MACsec connectivity over any transport than dark fiber, was non-existent, and for some of the carrier ethernet providers, highly discouraged due to the known challenges that existed, specifically for the key authentication.  The reason?  The MACsec Key Agreement (MKA), which is transported over the EAP over LAN (EAPoL) encapsulation leverages well-known MAC addresses (&&&) and Ether-types (&&&&) within the exchange.  The problem is that these well-known MAC/ethertype are used for other communications, such as 802.1X.  Given this, when two MACsec routers attempt to negotiate a MACsec session over MKA/EAPoL,the provider backbone bridge supporting the ethernet transport sees an Ethernet frame with this MAC/ethertype, and the logic says it is a "for me" frame, and consumes it for further processing.  Upon further processing, it deciphers it is not for the transit bridge, and drops the frame.  Now, the two MACsec endpoints have an unsuccessful key establishment as the MKA frame sent for key nogotiation never made it to the destination end-point.
+Prior to these enhancements, establishing MACsec connectivity over any transport than dark fiber, was non-existent, and for some of the carrier ethernet providers, highly discouraged due to the known challenges that existed, specifically for the key authentication.  The reason?  The MACsec Key Agreement (MKA), which is transported over the EAP over LAN (EAPoL) encapsulation leverages well-known MAC addresses (01:80:C2:00:00:03) and Ether-types (0x888e) within the exchange.  The problem is that these well-known MAC/ethertype are used for other communications, such as 802.1X.  Given this, when two MACsec routers attempt to negotiate a MACsec session over MKA/EAPoL,the provider backbone bridge supporting the ethernet transport sees an Ethernet frame with this MAC/ethertype, and the logic says it is a "for me" frame, and consumes it for further processing.  Upon further processing, it deciphers it is not for the transit bridge, and drops the frame.  Now, the two MACsec endpoints have an unsuccessful key establishment as the MKA frame sent for key nogotiation never made it to the destination end-point.
 
 for those provider backbone bridges to react on when protocols like 802.1X are needed.  So when an MKA session is being negotiated over     MACsec end-points running MACsec over public providers and certain layer-2 switching elements, were not able to set up the necessary connections using the MACsec Key Agreement (MKA) protocol.  These playbooks allow the operator to quickly enable (or delete) the necessary commands (posted below in the demonstation example) to enable this EAPoL enhancements. 
 
 
-### Solution - EOPoL Enhancements
+### Solution - EAPoL Enhancements
 
 To overcome this critical challenge for running MACsec over a public Ethernet transport, Cisco introduced the ability for an operator to modify the EAPoL MAC address and ethertype from the default settings of 802.1X.  The change options remain standard attributes and are only relevant to the MACsec MKA end-points, thus remaining transparent to the underlying carrier Ethernet provider transporting the frames, but now, unlike in the default settings, these EAPoL MKA frame remain untouched by the transit backbone bridges.
 
@@ -51,7 +51,8 @@ There are some high-level playbooks I created from a customer demonstration for 
 
 These playbooks and configuration examples can be found at:
 ```
-https://github.com/netwrkr95/macsec_eapol_demo
+https://github.com/netwrkr95/macsec_eapol_demo - automatic!
+[GitHub](https://github.com/netwrkr95/macsec_eapol_demo)
 ```
 
 ### References

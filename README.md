@@ -1,6 +1,8 @@
-## Enhancements for running MACsec over a public Carrier Ethernet Transport
+## Details for running MACsec over a public Carrier Ethernet Transport
 
-The purpose of this document is to provide several key enhancements Cisco IOS-XE, IOS-XR, and NX-OS has added to their MACsec feature capabilities for overcoming challenges typically seen when running MACsec encryption over a public carrier Ethernet transport (E-LINE, E-LAN, etc.).
+The purpose of this document is to provide an overview of key enhancements Cisco IOS-XE, IOS-XR, and NX-OS supports as part of their MACsec feature capabilities for overcoming challenges typically seen when running MACsec encryption over a public carrier Ethernet transport provider (E-LINE, E-LAN, etc.).
+
+It should be noted, the details in this document can also be leveraged as requirements to the provider, on the details for what their network should support for assuring a successful installation of Cisco devices running WAN MACsec over their transport service. Finally, there has been an increase in US Federal agencies leveraging MACsec for uplinks from their data centers to Co-Location centers (e.g. Equinix) so in those cases, you will find this content useful.
 
 ### What is WAN MACsec?
 

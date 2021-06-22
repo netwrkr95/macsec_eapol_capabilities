@@ -1,6 +1,6 @@
 # Details on the YANG Model Support in IOS-XE for EAPoL Commands
 
-
+The content below describes the YANG model description of the relevent EAPoL commands used in certain WAN MACsec deployments.
 
 
 ## WAN MACsec EAPoL YANG Model Leaf (view via 'pyang -f tree')

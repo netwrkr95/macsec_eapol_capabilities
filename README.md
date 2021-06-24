@@ -40,7 +40,7 @@ It should be noted that not all Ethernet transports and/or provider backbone bri
 
 ### Reference to the YANG model and reference for the EAPoL commands in IOS-XE
 
-[Link to YANG model out and description for WAN MACsec EAPoL](https://github.com/netwrkr95/macsec_eapol_capabilities/blob/master/ios-xe-pyang-tree-eapol.md)
+[Link to YANG model output and description for WAN MACsec EAPoL features](https://github.com/netwrkr95/macsec_eapol_capabilities/blob/master/ios-xe-pyang-tree-eapol.md)
 
 
 ### Ansible Playbooks for Automating the Deployment of these EAPoL Commands in IOS-XE

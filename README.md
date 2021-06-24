@@ -38,6 +38,11 @@ The final command in the example, "**macsec**", simply enables MACsec on the sho
 It should be noted that not all Ethernet transports and/or provider backbone bridges react on EAPoL related identifiers, specifically MAC address or ether-types, so in these cases, the operator can ignore enabling these commands on the MACsec interface.  As a best practice, these EAPoL commands are recommended, as it provides a deterministic MAC address/ether-type for the EAPoL packets that are ingnored by all transports and bridges/switches.
 ```
 
+### Reference to the YANG model and reference for the EAPoL commands in IOS-XE
+
+[Link to YANG model out and description for WAN MACsec EAPoL](https://github.com/netwrkr95/macsec_eapol_capabilities/blob/master/ios-xe-pyang-tree-eapol.md)
+
+
 ### Ansible Playbooks for Automating the Deployment of these EAPoL Commands in IOS-XE
 
 I created basic Ansible playbooks from a customer demonstration for applying these commands to an IOS-XE router running MACsec, in addition to other detailed examples for dynamic MKA key rotation within IOS-XE for pre-shared keys.

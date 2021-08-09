@@ -28,7 +28,7 @@ To overcome this critical challenge for running MACsec over a public Ethernet tr
 Enhancements for these two EAPoL parameters exist in IOS-XE routers supporting WAN MACsec, and target the following
 ```
 MKA MAC address:   multiple options exist for the destination address (see example below)
-MKA Ether-type :   0x876F (a Cisco owned Ether Type used for MKA, that provider backbone bridges should ignore)
+MKA Ether-type :   0x876F (a Cisco owned Ether Type, that provider backbone bridges will ignore)
 ```
 
 Examples "output" from an IOS-XE router supporting WAN MACsec and the EAPoL tuning operations:

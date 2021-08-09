@@ -12,7 +12,7 @@ To gather a more in-depth understanding of WAN MACsec, how it benefits network d
 
 Prior to these enhancements, establishing MACsec connectivity over any transport than dark fiber, was non-existent, and for some of the carrier ethernet providers, highly discouraged due to the known challenges that existed, specifically for the key authentication.  The reason?  The MACsec Key Agreement (MKA), which is transported over the EAP over LAN (EAPoL) encapsulation, leverages a **well-known MAC address and Ether-type** values within the key exchange process, that are also needed to be transported through the ethernet transport service being leveraged.
 
-The well-known MKA "default" values are as follows:
+The well-known MKA "default" values are as follows in the example below:
 
 ```
 MKA MAC address:   01:80:C2:00:00:03
@@ -30,7 +30,6 @@ Enhancements for these two EAPoL parameters exist in IOS-XE routers supporting W
 MKA MAC address:   multiple options exist for the destination address (see example below)
 MKA Ether-type :   0x876F (a Cisco owned Ether Type, that provider backbone bridges will ignore)
 ```
-
 
 
 Examples "output" from an IOS-XE router supporting WAN MACsec and the EAPoL tuning operations:

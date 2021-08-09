@@ -15,8 +15,8 @@ Prior to these enhancements, establishing MACsec connectivity over any transport
 The well-known MKA "default" values are as follows:
 
 ```
-  MKA MAC address: 01:80:C2:00:00:03
-  MKA Ether-type : 0x888e
+MKA MAC address:   01:80:C2:00:00:03
+MKA Ether-type :   0x888e
 ```
 
 The problem is that this well-known MAC/ethertype are used for other communications, such as 802.1X.  Given this, when two MACsec routers attempt to negotiate a MACsec session over MKA/EAPoL,the provider backbone bridge supporting the ethernet transport sees an Ethernet frame with this MAC/ethertype, and the logic says it is a "for me" frame, and consumes it for further processing.  Upon further processing, it deciphers it is not for the transit bridge, and drops the frame.  Now, the two MACsec endpoints have an unsuccessful key establishment as the MKA frame sent for key nogotiation never made it to the destination end-point.

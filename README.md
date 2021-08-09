@@ -31,6 +31,8 @@ MKA MAC address:   multiple options exist for the destination address (see examp
 MKA Ether-type :   0x876F (a Cisco owned Ether Type, that provider backbone bridges will ignore)
 ```
 
+
+
 Examples "output" from an IOS-XE router supporting WAN MACsec and the EAPoL tuning operations:
 ```
 ASR-1000-A(config)#int gig 0/0/0

@@ -25,10 +25,31 @@ The problem is that this well-known MAC/ethertype are used for other communicati
 
 To overcome this critical challenge for running MACsec over a public Ethernet transport, Cisco introduced the ability for an operator to modify the EAPoL MAC address and ethertype from the default settings of 802.1X.  The change options remain standard attributes and are only relevant to the MACsec MKA end-points, thus remaining transparent to the underlying carrier Ethernet provider transporting the frames, but now, unlike in the default settings, these EAPoL MKA frame remain untouched by the transit backbone bridges.
 
+Enhancements for these two EAPoL parameters exist in IOS-XE routers supporting WAN MACsec, and target the following
+```
+MKA MAC address:   multiple options exist for the destination address (see example below)
+MKA Ether-type :   0x876F (a Cisco owned Ether Type used for MKA, that provider backbone bridges should ignore)
+```
+
+Examples "output" from an IOS-XE router supporting WAN MACsec and the EAPoL tuning operations:
+```
+ASR-1000-A(config)#int gig 0/0/0
+ASR-1000-A(config-if)#eapol destination-address ?
+  H.H.H                   MAC address
+  bridge-group-address    Configure bridge group address
+  broadcast-address       Configure broadcast MAC address
+  lldp-multicast-address  Configure lldp multicast address
+
+
+ASR-1000-A(config-if)#eapol eth-type ?
+  876F  Alternate Eth Value (presently only one eth-type supported)
+  ```
+
+
+
 ### WAN MACsec EAPoL Command Example
 
 Below is an IOS-XE example of the two primary enhancement commands to the EAPoL key exchange transport:
-
 ```
 interface TenGigabitEthernet0/0/0
 ...
@@ -38,6 +59,7 @@ interface TenGigabitEthernet0/0/0
  macsec
 !
 ```
+
 The first of these commands, the "**eapol destination-address broadcast-address**" command, allows the EAPoL destination MAC address to be modified, using a standard (all "F's") broadcast address.  This allows the Layer-2 transport network to treat the EAPoL traffic as a standard broadcast type packet, and more importantly, transparently flooding it to all receivers un-processed by the transit backbone bridges. 
 
 The second command, "**eapol eth-type 876F**", modifies the ether-type of the EAPoL frame to an ether-type that is "unknown" (Cisco owns this ether-type value) encoding, changing the behavior of how the public Ethernet transport transit bridge processes the frame.  In essence, it allows the transit bridge(s) to ignore this ether-type and for the frame to be sent to the MACsec destination MACsec end-point, un-processed.  The output from a WireShark capture of both the MAC-address and Ether-type after the modification, can be found a the following link in the "docs" section of the repo ([EAPoL WireShark capture output](https://github.com/netwrkr95/macsec_eapol_capabilities/blob/master/docs/EAPoL_Capture.txt)).
